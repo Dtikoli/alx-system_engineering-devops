@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -amxF --group-directories-first
