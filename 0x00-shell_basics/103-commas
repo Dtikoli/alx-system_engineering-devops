@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -amxF --group-directories-first
+ls --group-directories-first -mFa 
