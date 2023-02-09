@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R ugo+xX ~/alx-system_engineering-devops/0x00-shell_basics
+chmod -R ugo+x ~/alx-system_engineering-devops/0x00-shell_basics
