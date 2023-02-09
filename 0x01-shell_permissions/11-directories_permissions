@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R ugo+X 0x00-shell_permissions
+chmod -R ugo+X /root/alx-system_engineering-devops/0x01-shell_permissions
