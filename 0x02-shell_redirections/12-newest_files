@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 0 -type f | ls -lt | head
+find . -maxdepth 1 -type f | ls -lt | head
