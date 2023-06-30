@@ -29,7 +29,7 @@ int main(void)
 		zombie = fork();
 		if (!zombie)
 			break;
-		printf("Zombie process created, PID: %i\n", (int)pid);
+		printf("Zombie process created, PID: %i\n", zombie);
 		child_processes++;
 	}
 	if (zombie != 0)
