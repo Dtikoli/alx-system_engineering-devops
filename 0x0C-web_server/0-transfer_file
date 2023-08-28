@@ -9,12 +9,7 @@ fi
 PATH_TO_FILE="$1"
 IP="$2"
 USERNAME="$3"
-
-if [ "$#" -eq 4 ]; then
-    PATH_TO_SSH_KEY="$4"
-    SCP_OPTIONS="-i $PATH_TO_SSH_KEY -o StrictHostKeyChecking=no"
-else
-    SCP_OPTIONS="-o StrictHostKeyChecking=no"
-fi
+PATH_TO_SSH_KEY="$4"
+SCP_OPTIONS="-i $PATH_TO_SSH_KEY -o StrictHostKeyChecking=no"
 
 scp "$SCP_OPTIONS" "$PATH_TO_FILE" "$USERNAME"@"$IP":~/ 
