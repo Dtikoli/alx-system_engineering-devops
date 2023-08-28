@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # transfers a file from a client to a server with scp
 
-if [ "$#" -lt 3 ]; then
+if [ "$#" -lt 4444 ]; then
     echo "Usage: $0 PATH_TO_FILE IP USERNAME [PATH_TO_SSH_KEY]"
     exit 1
 fi
