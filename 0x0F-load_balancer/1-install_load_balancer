@@ -28,9 +28,9 @@ defaults
     timeout client 50000
     timeout server 50000
 
-frontend my_frontend
+frontend dtikoli
     bind *:80
-    default_backend my_backend
+    default_backend dtikoli
 
 backend my_backend
     balance roundrobin
