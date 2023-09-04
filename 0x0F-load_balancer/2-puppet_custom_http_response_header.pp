@@ -1,14 +1,31 @@
 # Installs Nginx and custom HTTP response headers
-exec { '/usr/bin/env apt-get -y update' : }
--> package { 'nginx':
-  ensure => installed,
+
+# Ensure that package information is up to date
+exec { 'update-apt':
+  command => '/usr/bin/apt-get update',
+  path    => ['/usr/bin'],
+  logoutput => true,
+  refreshonly => true,
 }
--> file_line { 'add header' :
+
+# Install the Nginx package
+package { 'nginx':
+  ensure => installed,
+  require => Exec['update-apt'],
+}
+
+# Add custom HTTP response header to Nginx configuration
+file_line { 'add-header':
   ensure => present,
   path   => '/etc/nginx/sites-available/default',
   line   => "\\\tadd_header X-Served-By ${HOSTNAME};",
   after  => 'server_name _;',
 }
--> service { 'nginx':
-  ensure => running,
+
+# Ensure that the Nginx service is running
+service { 'nginx':
+  ensure  => running,
+  enable  => true,
+  require => Package['nginx'],
 }
+
