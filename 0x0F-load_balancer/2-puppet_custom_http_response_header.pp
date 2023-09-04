@@ -17,7 +17,7 @@ package { 'nginx':
 # Add custom HTTP response header to Nginx configuration
 file_line { 'add-header':
   ensure => present,
-  path   => '/etc/nginx/sites-available/default',
+  path   => '/etc/nginx/sites-enabled/default',
   line   => "\\\tadd_header X-Served-By ${HOSTNAME};",
   after  => 'server_name _;',
 }
