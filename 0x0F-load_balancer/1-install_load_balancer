@@ -7,38 +7,21 @@ sudo apt-get -y update
 sudo apt-get -y install haproxy
 
 # Edit the HAProxy configuration file
-echo "
-global
-    log /dev/log local0
-    log /dev/log local1 notice
-    chroot /var/lib/haproxy
-    stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
-    stats timeout 30s
-    user haproxy
-    group haproxy
-    daemon
 
-defaults
-    log global
-    mode http
-    option httplog
-    option dontlognull
-    timeout connect 5000
-    timeout client 50000
-    timeout server 50000
+server_config="
+frontend dtikoli-frontend
+        bind *:80
+        mode http
+        default_backend dtikoli-backend
+backend dtikoli-backend
+        balance roundrobin
+        server 251357-web-01 54.173.130.243:80 check
+        server 251357-web-02 54.165.89.101:80 check
+"
+echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
-frontend dtikoli
-    bind *:80
-    default_backend dtikoli
+# Enable haproxy to be started by init script
 
-backend dtikoli
-    balance roundrobin
-    server 251357-web-01 54.173.130.243:80 check
-    server 251357-web-02 54.165.89.101:80 check
-" | sudo tee -a /etc/haproxy/haproxy.cfg
-
-# Enable HAProxy to be started by init script
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
 
-# Restart HAProxy
-sudo systemctl restart haproxy
+sudo service haproxy restart
