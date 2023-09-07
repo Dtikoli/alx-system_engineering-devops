@@ -41,7 +41,7 @@ frontend www-http
     default_backend wed-servers
 
 frontend www-https
-    bind *:443 ssl crt /etc/letsencrypt/live/www.dtikoli.tech/fullchain.pem
+    bind *:443 ssl crt /etc/letsencrypt/live/www.dtikoli.tech/dtikoli.pem
     http-request set-header X-Forwarded-Proto https
     http-request redirect scheme https code 301 unless { ssl_fc }
     default_backend web-servers
