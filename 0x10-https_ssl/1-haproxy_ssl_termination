@@ -9,7 +9,7 @@ global
     group haproxy
     daemon
 
-    #Diffie-Hellman (DH) parameters
+    # Diffie-Hellman (DH) parameters
     tune.ssl.default-dh-param 2048
 
     # Default SSL material locations
