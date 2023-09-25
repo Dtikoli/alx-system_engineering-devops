@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Export in a csv format the to-do list of an employee with a given ID."""
+import csv
 import requests
 import sys
-import csv
 
 if __name__ == "__main__":
     baseUrl = "https://jsonplaceholder.typicode.com"
