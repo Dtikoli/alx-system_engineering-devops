@@ -18,6 +18,6 @@ if __name__ == "__main__":
     eName = eRes.get("name")
     complet = [task.get("title") for task in tRes if task.get("completed")]
 
-    print(f"Employee {eName} is done with tasks ({len(complet)}/{len(tRes)}):")
+    print(f"Employee {eName} is done with tasks({len(complet)}/{len(tRes)}):")
     for comp in complet:
         print(f"\t {comp}")
