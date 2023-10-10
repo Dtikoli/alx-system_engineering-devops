@@ -16,7 +16,7 @@ def count_words(subreddit, word_list, after="", count=[]):
     params = {'after': after}
     user_agent = {'user-agent': 'dtik'}
     response = requests.get(url, params=params, headers=user_agent,
-                   allow_redirects=False)
+                            allow_redirects=False)
 
     if response.status_code == 200:
         data = response.json()
