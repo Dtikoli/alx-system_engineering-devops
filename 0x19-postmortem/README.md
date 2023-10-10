@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Postmortem: Web Stack Outage 😱</h1>
 
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHD9epLsedok1E8iv-AjG1T-ZDPDlm6C_tzGjmTJ8XQ&s" alt="Comic" width="400" height="300">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHD9epLsedok1E8iv-AjG1T-ZDPDlm6C_tzGjmTJ8XQ&s" alt="Comic" width="400" height="200">
 </div>
 
 ## Issue Summary:
