@@ -15,7 +15,7 @@ def top_ten(subreddit):
 
     user_agent = {'User-agent': 'dtik'}
     params = {'limit': 10}
-    url = f'https://www.reddit.com/r/{subreddit}/hot/.json'
+    url = f'https://www.reddit.com/r/{subreddit}/hot.json'
 
     response = get(url, headers=user_agent, params=params,
                    allow_redirects=False)
