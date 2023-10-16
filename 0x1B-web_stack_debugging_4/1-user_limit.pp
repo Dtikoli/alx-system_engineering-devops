@@ -1,7 +1,7 @@
 # A manifest to set system-wide nofile ulimit values for the holberton user
 
 # Increase nofile hard ulimit
-exec { 'nofile-hard'':
+exec { 'nofile-hard':
   command => 'sed -i "/holberton hard/s/5/10240/" /etc/security/limits.conf',
   path    => '/usr/local/bin/:/bin/'
 }
